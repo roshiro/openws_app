@@ -11,18 +11,11 @@ angular.module('openwsAppApp')
   .controller('SignupCtrl', ['$http', '$log', function ($http,$log,$scope) {
     this.selectedAction = 'signup';
     this.usersUrl = 'https://openws.herokuapp.com/app.users';
-    this.users = [];
     this.user = {};
-    var _this = this;
-
-    $http.get(this.usersUrl).success(function(data) {
-      _this.users = data;
-    });
 
     this.signup = function(user) {
       delete user['confirmPassword'];
       $log.debug(user);
-      this.users.push(user);
       this.user = {};
       $http.post(this.usersUrl, user)
         .success(function() {

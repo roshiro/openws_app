@@ -19,4 +19,8 @@ describe('Controller: SignupCtrl', function () {
   it('sets the selected action as signup', function () {
     expect(MainCtrl.selectedAction).toBe('signup');
   });
+
+  it('saves the user', function() {
+
+  });
 });
