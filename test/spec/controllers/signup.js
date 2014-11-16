@@ -1,22 +1,22 @@
 'use strict';
 
-describe('Controller: AboutCtrl', function () {
+describe('Controller: SignupCtrl', function () {
 
   // load the controller's module
   beforeEach(module('openwsAppApp'));
 
-  var AboutCtrl,
+  var MainCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AboutCtrl = $controller('AboutCtrl', {
+    MainCtrl = $controller('SignupCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('sets the selected action as signup', function () {
+    expect(MainCtrl.selectedAction).toBe('signup');
   });
 });
