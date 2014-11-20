@@ -23,15 +23,15 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header" ng-controller="MainCtrl as mainCtrl">
-        <ul class="nav nav-pills pull-right">
+        <!-- <ul class="nav nav-pills pull-right">
           <li ng-class="mainCtrl.selectedAction == 'home' ? 'active' : ''">
-            <a ng-click="mainCtrl.selectedAction = 'home'" ng-href="#">Home</a>
+            <a ng-click="mainCtrl.selectedAction = 'home'" ng-href="#/">Home</a>
           </li>
           <li ng-class="mainCtrl.selectedAction == 'signup' ? 'active' : ''">
             <a ng-click="mainCtrl.selectedAction = 'signup'" ng-href="#/signup">Sign Up</a>
           </li>
-        </ul>
-        <h3 class="text-muted"><a ng-href="#/">openwsApp</a></h3>
+        </ul> -->
+        <h3 class="text-muted"><a ng-click="mainCtrl.selectedAction = 'home'" ng-href="#/">openwsApp</a></h3>
       </div>
 
       <div ng-view=""></div>
@@ -77,6 +77,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/signup.js"></script>
+        <script src="scripts/typed.js"></script>
         <!-- endbuild -->
 </body>
 </html>

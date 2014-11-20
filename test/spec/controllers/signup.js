@@ -6,7 +6,7 @@ describe('Controller: SignupCtrl', function () {
   beforeEach(module('openwsAppApp'));
 
   var MainCtrl,
-    scope;
+      scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {

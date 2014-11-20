@@ -1,23 +1,39 @@
-<h2>Sign Up</h2>
+<div class="title">
+  <h1>REST API ready to go for your JSON.<br>Great for your <span class="language"></span> app.</h1>
+  <p class="lead info">After you enter your email address, you'll receive the information to use REST API straight away in your application.</p>
+</div>
 
-<form name="newUserForm" role="form"
+<div ng-controller="MainCtrl" ng-init="MainCtrl.selectedAction='signup'"></div>
+
+<form name="newUserForm" class="signup_form" role="form"
       ng-controller="SignupCtrl as signupCtrl"
-      ng-submit="newUserForm.$valid && signupCtrl.validPassword(signupCtrl.user) && signupCtrl.signup(signupCtrl.user)" novalidate>
+      ng-submit="newUserForm.$valid && signupCtrl.validPassword(signupCtrl.user) && signupCtrl.signup(signupCtrl.user)"
+      ng-init="signupCtrl.selectedAction='signup'" novalidate>
   <div class="form-group">
     <label for="email">Email address</label>
     <input type="email" ng-model="signupCtrl.user.email" class="form-control" placeholder="Enter email" required>
   </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" ng-model="signupCtrl.user.password" class="form-control" required>
-  </div>
-  <div class="form-group">
-    <label for="confirm-password">Confirm Password</label>
-    <input type="password" ng-model="signupCtrl.user.confirmPassword" name="confirm-password" class="form-control" required>
-  </div>
-  <div>form is {{ newUserForm.$valid && signupCtrl.validPassword(signupCtrl.user) }}</div>
-  <button type="submit" class="btn btn-default">
+  <button type="submit" class="btn btn-primary btn-signup">
     <span ng-show="newUserForm.$valid && signupCtrl.validPassword(signupCtrl.user)" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-    Sign Up for OpenWS
+    I want to use OpenWS for FREE!
   </button>
+
+  <div class="alert alert-success alert-dismissible ng-hide" role="alert" ng-show="signupCtrl.showSuccess">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <strong>Sweet!</strong> You should receive an email in a while.
+  </div>
+  <div class="alert alert-danger alert-dismissible ng-hide" role="alert" ng-show="signupCtrl.showError">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <strong>Sorry!</strong> I didn't expect this to happen. Please try another time.
+  </div>
 </form>
+<script>
+  $(".language").typed({
+    strings: ["Angular JS", "Ember JS", "iPhone", 'any platform!'],
+    typeSpeed: 100,
+    backSpeed: 30,
+    backDelay: 1200,
+    startDelay: 1200,
+    loop: false
+  });
+</script>

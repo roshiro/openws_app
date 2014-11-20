@@ -40,6 +40,7 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  margin-top: 35px;
 }
 
 .container-narrow > hr {
@@ -87,4 +88,70 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.title {
+  margin-bottom: 30px;
+
+  h1 {
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: -2px;
+    line-height: 46px;
+  }
+
+  p.info {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    margin-top: 38px;
+  }
+}
+
+form.signup_form {
+  width: 80%;
+  margin: auto;
+
+  button.btn-signup {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.btn-signup.btn-primary {
+  color: #fff;
+  background-color: #0066cc;
+  border-color: darkblue;
+  font-weight: bold;
+
+  &:hover {
+    background-color: blue;
+  }
+}
+
+.language {
+  display: inline-block;
+  border-bottom: 1 dashed red;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
