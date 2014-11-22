@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -31,7 +32,7 @@
             <a ng-click="mainCtrl.selectedAction = 'signup'" ng-href="#/signup">Sign Up</a>
           </li>
         </ul> -->
-        <h3 class="text-muted"><a ng-click="mainCtrl.selectedAction = 'home'" ng-href="#/">openwsApp</a></h3>
+        <h3 class="text-muted"><a ng-href="/">openwsApp</a></h3>
       </div>
 
       <div ng-view=""></div>
@@ -75,8 +76,12 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="https://app.userapp.io/js/userapp.client.js"></script>
+        <script src="https://app.userapp.io/js/angularjs.userapp.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/signup.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <script src="scripts/typed.js"></script>
         <!-- endbuild -->
 </body>
