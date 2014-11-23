@@ -9,12 +9,13 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body ng-app="openwsAppApp">
     <!--[if lt IE 7]>
@@ -29,7 +30,7 @@
           <button type="button" ng-hide="user.authenticated" class="btn btn-default pull-right" ng-click="mainCtrl.goLogin()">
             Login
           </button>
-          <button type="button" ng-show="user.authenticated" class="btn btn-default btn-signup pull-right" ua-logout>
+          <button type="button" ng-show="user.authenticated" class="btn btn-default pull-right" ua-logout>
             Logout
           </button>
         </div>
@@ -83,6 +84,7 @@
         <script src="scripts/controllers/home.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/typed.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
         <!-- endbuild -->
 </body>
 </html>

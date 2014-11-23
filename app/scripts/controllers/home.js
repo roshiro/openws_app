@@ -9,5 +9,5 @@
 */
 angular.module('openwsAppApp')
 .controller('HomeCtrl', function ($scope) {
-  console.log("User logged in");
+
 });

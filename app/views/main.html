@@ -18,27 +18,31 @@
     <p>Follow the steps to use the API with AngularJS.</p>
     <p>#1. Saving a JSON object</p>
     <pre>
-      ...
-      var = taskJSON = {
-        name: "My first task",
-        completed: false
-      };
+      <code class="js">
+  ...
+  var = taskJSON = {
+    name: "My first task",
+    completed: false
+  };
 
-      $http.post("https://openws.herokuapp.com/my_tasks", taskJSON)
-        .success(function() {
-          $log.debug("Task saved successfuly");
-        });
-      ...
+  $http.post("https://openws.herokuapp.com/my_tasks?apiKey=YOUR_API_KEY", taskJSON)
+    .success(function() {
+      $log.debug("Task saved successfuly");
+    });
+  ...
+      </code>
     </pre>
 
     <p>#2. Retrieving all JSON objects</p>
     <pre>
-      ...
-      $http.get("https://openws.herokuapp.com/my_tasks")
-        .success(function() {
-          $log.debug("Task saved successfuly");
-        });
-      ...
+      <code class="js">
+  ...
+  $http.get("https://openws.herokuapp.com/my_tasks?apiKey=YOUR_API_KEY")
+    .success(function() {
+      $log.debug("Task saved successfuly");
+    });
+  ...
+      </code>
     </pre>
 
     OpenWS API supports POST, PUT, GET and DELETE http methods. Check examples on how to use them here.
@@ -53,4 +57,6 @@
     startDelay: 1200,
     loop: true
   });
+
+  hljs.initHighlightingOnLoad();
 </script>

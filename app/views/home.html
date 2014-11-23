@@ -1,6 +1,27 @@
-<div ng-controller="HomeCtrl"></div>
+<div class="home" ng-controller="HomeCtrl">
+  <div>
+    <ul>
+      <li class="welcome">Welcome {{ user.first_name }}!</li>
+      <li>
+        <label>Email</label><span>{{ user.email }}</span></li>
+      <li>
+        <label>API Key</label>
+        <span class="monospace">{{ apiKey }}</span>
+      </li>
+    </ul>
 
-<div>
-  <div>Welcome {{ user.first_name }}!</div>
-  <a href="#" ua-logout>Log Out</a>
+    <section>
+      <h3>Steps to get started</h3>
+      <pre>
+        <code class="js">
+  // Use you API Key for all requests to the API
+  $http.post("https://openws.herokuapp.com/my_tasks?apiKey={{ apiKey }}", taskJSON)
+    .success(function() {
+      ...
+    });
+        </code>
+      </pre>
+    </section>
+  </div>
 </div>
+<script>hljs.initHighlightingOnLoad();</script>

@@ -145,6 +145,40 @@ body {
   }
 }
 
+pre {
+  padding: 0;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  .hljs {
+    border: 1px solid #ccc;
+    padding: 0;
+    border-radius: 4px;
+  }
+}
+
+.home {
+  ul {
+    list-style: none;
+    li {
+      height: 30px;
+
+      label {
+        width: 100px;
+      }
+    }
+  }
+  .welcome {
+    font-weight: bold;
+  }
+}
+
+.monospace {
+  font-family: monospace;
+}
+
 .signup-page {
   text-align: center;
 
