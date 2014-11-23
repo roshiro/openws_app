@@ -10,7 +10,6 @@
 angular.module('openwsAppApp')
 .controller('SignupCtrl', function ($scope) {
   this.selectedAction = 'home';
-
   $scope.awesomeThings = [
   'HTML5 Boilerplate',
   'AngularJS',

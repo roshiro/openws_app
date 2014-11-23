@@ -24,7 +24,7 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  position: relative;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -32,6 +32,15 @@ body {
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
+  }
+
+  .buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    button {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -90,47 +99,57 @@ body {
   }
 }
 
-.title {
-  margin-bottom: 30px;
-
-  h1 {
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: -2px;
-    line-height: 46px;
-  }
-
-  p.info {
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-    margin-top: 38px;
-  }
-}
-
-form.signup_form {
-  width: 80%;
-  margin: auto;
-
-  button.btn-signup {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-}
-
 .btn-github, .btn-google {
   font-size: 14px;
   font-weight: bold;
 }
 
-.btn-signup.btn-primary {
-  color: #fff;
-  background-color: #0066cc;
-  border-color: darkblue;
-  font-weight: bold;
-
+.btn-signup {
+  background-color: #fa492b;
+  border-color: #fa492b;
   &:hover {
-    background-color: blue;
+    background-color: #af331e;
+    border-color: #af331e;
+  }
+}
+
+.main {
+  .title {
+    margin-bottom: 30px;
+    text-align: center;
+
+    h1 {
+      font-weight: bold;
+      letter-spacing: -2px;
+      line-height: 46px;
+    }
+
+    h3 {
+      color: #666;
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      margin-top: 30px;
+      font-weight: 300;
+      font-size: 20px;
+    }
+  }
+
+  .btn-signup {
+    margin: auto;
+    display: block;
+  }
+
+  section {
+    margin-top: 100px;
+  }
+}
+
+.signup-page {
+  text-align: center;
+
+  h2 {
+    margin-bottom: 40px;
   }
 }
 

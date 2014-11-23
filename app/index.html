@@ -24,15 +24,15 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header" ng-controller="MainCtrl as mainCtrl">
-        <!-- <ul class="nav nav-pills pull-right">
-          <li ng-class="mainCtrl.selectedAction == 'home' ? 'active' : ''">
-            <a ng-click="mainCtrl.selectedAction = 'home'" ng-href="#/">Home</a>
-          </li>
-          <li ng-class="mainCtrl.selectedAction == 'signup' ? 'active' : ''">
-            <a ng-click="mainCtrl.selectedAction = 'signup'" ng-href="#/signup">Sign Up</a>
-          </li>
-        </ul> -->
-        <h3 class="text-muted"><a ng-href="/">openwsApp</a></h3>
+        <h3 class="text-muted"><a ng-href="#/">openwsApp</a></h3>
+        <div class="buttons">
+          <button type="button" ng-hide="user.authenticated" class="btn btn-default pull-right" ng-click="mainCtrl.goLogin()">
+            Login
+          </button>
+          <button type="button" ng-show="user.authenticated" class="btn btn-default btn-signup pull-right" ua-logout>
+            Logout
+          </button>
+        </div>
       </div>
 
       <div ng-view=""></div>

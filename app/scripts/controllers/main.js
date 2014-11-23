@@ -8,7 +8,7 @@
 * Controller of the openwsAppApp
 */
 angular.module('openwsAppApp')
-.controller('MainCtrl', ['$http', '$location', '$log', function ($http, $location, $log,$scope) {
+.controller('MainCtrl', ['$http', '$location', '$log', '$scope', function ($http, $location, $log,$scope) {
   this.usersUrl = 'https://openws.herokuapp.com/app.users';
   this.showSuccess = false;
   this.showError = false;
