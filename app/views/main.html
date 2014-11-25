@@ -1,7 +1,7 @@
 <div class="main" ng-controller="MainCtrl as mainCtrl">
   <div class="title">
     <h1>The platform to store your JSON objects.<br>Works great with <span class="language"></span></h1>
-    <h3>OpenWS makes you develop web applications faster, no server-side knowledge required. Proudly built by developers for developers.</h3>
+    <h3>OpenWS makes you <span>develop web applications faster</span>, no server-side knowledge required. Proudly built by developers for developers.</h3>
   </div>
 
   <button type="submit" class="btn btn-success btn-lg btn-signup" ng-click="mainCtrl.goSignup()">
@@ -9,14 +9,35 @@
   </button>
 
   <section class="what-is">
-    <h2>What is OpenWS.io</h2>
-    <p>---</p>
+    <h2>What's OpenWS</h2>
+    <p>OpenWS makes <strong>web development faster</strong> by allowing webdevs to store their JSON objects into our platform.
+      It means you don't need to worry about creating the server-side mechanism to make the hard work of saving,
+      retrieving, searching, updating and deleting your data, we've done the hard work for you.</p>
+
+    <p>Our API supports POST, PUT, GET and DELETE. It means you will be allowed to save your data,
+      update it, retrieve it and delete it.</p>
+  </section>
+
+  <section class="it-it-for-me">
+    <h2>Is OpenWS for me?</h2>
+    <p>
+      OpenWS is a great fit for your project if:
+      <ul>
+        <li>You're a web developer</li>
+        <li>Your project needs to store data</li>
+        <li>You have no knowledge of server-side development (if you do, that's fine)</li>
+        <li>You want to prototype and develop your front-end quickly</li>
+      </ul>
+    </p>
   </section>
 
   <section class="how-it-works">
     <h2>How to start in 6 minutes</h2>
     <p>Follow the steps to use the API with AngularJS.</p>
-    <p>#1. Saving a JSON object</p>
+    <p>#1. Create an account for free</p>
+    <p>You will receive an API KEY which will be used in the next step.</p>
+
+    <p>#2. Saving a JSON object</p>
     <pre>
       <code class="js">
   ...
@@ -33,7 +54,7 @@
       </code>
     </pre>
 
-    <p>#2. Retrieving all JSON objects</p>
+    <p>#3. Retrieving all JSON objects</p>
     <pre>
       <code class="js">
   ...
@@ -46,6 +67,18 @@
     </pre>
 
     OpenWS API supports POST, PUT, GET and DELETE http methods. Check examples on how to use them here.
+  </section>
+
+  <section>
+    <h2>More about us</h2>
+    <p>OpenWS is new, it means there are a lot of <strong>improvements</strong> happening right now.
+      If you have suggestions to improve this service or want to help spread the word, please do
+      contact me directly via twitter <a href="http://twitter.com/roshiro" target="_blank">@roshiro</a>.</p>
+  </section>
+
+  <section>
+    <h2>Be the first to get News and Updates</h2>
+    <p></p>
   </section>
 </div>
 <script>

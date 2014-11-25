@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
   </head>
   <body ng-app="openwsAppApp">
     <!--[if lt IE 7]>
@@ -28,7 +28,7 @@
         <h3 class="text-muted"><a ng-href="#/">openwsApp</a></h3>
         <div class="buttons">
           <button type="button" ng-hide="user.authenticated" class="btn btn-default pull-right" ng-click="mainCtrl.goLogin()">
-            Login
+            Login<i class="icon"></i>
           </button>
           <button type="button" ng-show="user.authenticated" class="btn btn-default pull-right" ua-logout>
             Logout
