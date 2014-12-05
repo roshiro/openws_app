@@ -2,9 +2,10 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>OpenWS</title>
-    <meta name="description" content="">
+    <title>OpenWS stores JSON objects using a simple REST API</title>
+    <meta name="description" content="OpenWS makes it easy for front-end devs to store their JSON objects without any server-side knowledge.">
     <meta name="viewport" content="width=device-width">
+    <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -25,7 +26,7 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header" ng-controller="MainCtrl as mainCtrl">
-        <h3 class="text-muted"><a ng-href="#/">openwsApp</a></h3>
+        <h3 class="text-muted"><a ng-href="/"><img src="/images/logo.png"></a></h3>
         <div class="buttons">
           <button type="button" ng-hide="user.authenticated" class="btn btn-default pull-right" ng-click="mainCtrl.goLogin()">
             Login<i class="icon"></i>

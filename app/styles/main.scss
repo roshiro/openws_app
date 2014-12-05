@@ -31,8 +31,10 @@ span.icon {
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
   padding-bottom: 20px;
+  // background: url('/images/background.jpeg') no-repeat;
+  // background-size: cover;
+  // color:white;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -98,10 +100,63 @@ body {
   }
 }
 
+.container {
+  padding-top: 10px;
+}
+
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1010px;
+
+    div#main_background {
+      min-height: 500px;
+
+      div.background {
+        padding: 35px 0;
+        width: 700px;
+        margin: auto;
+
+        img { width: 100%; }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    width: 96%;
+
+    div#main_background {
+
+      div.background {
+        padding: 35px 0;
+        width: 700px;
+        margin: auto;
+
+        img { width: 100%; }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
   .container {
     max-width: 730px;
+
+    div#main_background {
+      min-height: 300px;
+
+      div.background {
+        padding: 35px 0;
+        width: 280px;
+        margin: auto;
+
+        img { width: 100%; }
+      }
+
+    }
   }
 
   /* Remove the padding we set earlier */
@@ -175,10 +230,34 @@ body {
   }
 
   section {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
+
+    h2 {
+      margin-bottom: 35px;
+    }
 
     &.what-is {
       margin-top: 100px;
+    }
+
+    &.how-it-works {
+      li {
+        margin-bottom: 20px;
+        strong {
+          font-size: 1.3em;
+        }
+      }
+    }
+
+    &.works-great {
+      .platforms {
+        width: 80%;
+        margin: auto;
+
+        img {
+          width: 100%;
+        }
+      }
     }
 
     p, ul {
@@ -194,13 +273,11 @@ pre {
   margin: 0;
   padding: 0;
   margin: 0;
-  background-color: transparent;
   border: none;
-  .hljs {
-    border: 1px solid #ccc;
-    padding: 0;
-    border-radius: 4px;
-  }
+
+  background: #f3f5f7;
+  padding: 0 25px;
+  margin: 15px 0;
 }
 
 .home {
@@ -262,4 +339,39 @@ body textarea, body input, body button { outline: 0 !important; }
 body button:focus {
   outline-color: transparent;
   outline-style: none;
+}
+
+.btn-default {
+  border-color: #333;
+
+  &:active, &:hover {
+    border-color: #333;
+    background: #333;
+    color: #FFF;
+  }
+}
+
+#mc_embed_signup {
+  font-family: inherit;
+  width: 500px;
+
+  label {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .button {
+    background-color: #8fc857;
+    &:hover, &:focus, &:active {
+      background-color: #5c9425;
+    }
+  }
+
+  form {
+    padding-left: 0;
+  }
+
+  input.email {
+    width: 100%;
+  }
 }
