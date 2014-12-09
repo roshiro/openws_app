@@ -45,6 +45,9 @@ angular
   })
   .run(function($http, $log, $location, $rootScope, user) {
     user.init({ appId: '54707a9c6d212' });
+    $rootScope.wsUrl = "https://openws.herokuapp.com/";
+    $rootScope.appApiKey = "b9276e788652f8287e80242dab6e5a2a";
+
     var redirectUrls = ["/signup", "/login", "/", ""];
 
     if(($location.$$path == "" || $location.$$path == "#/") && !user.status().authenticated) {
@@ -57,7 +60,7 @@ angular
     }
 
     $rootScope.$on('user.login', function() {
-      var userUrl = "https://openws.herokuapp.com/api/users/new?apiKey=b9276e788652f8287e80242dab6e5a2a",
+      var userUrl = $rootScope.wsUrl + 'api/users/new?apiKey=' + $rootScope.appApiKey,
           userJson = {
             email: user.current.email,
             user_id: user.current.user_id

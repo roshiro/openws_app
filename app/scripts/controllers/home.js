@@ -8,6 +8,9 @@
 * Controller of the openwsAppApp
 */
 angular.module('openwsAppApp')
-.controller('HomeCtrl', function ($scope) {
-
-});
+.controller('HomeCtrl', ['$http', '$rootScope', function ($http, $rootScope, $scope) {
+  $http.get($rootScope.wsUrl + 'api/users/collections?apiKey=' + $rootScope.appApiKey)
+    .success(function(data) {
+      console.log(data);
+    });
+}]);

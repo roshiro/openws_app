@@ -6,17 +6,76 @@
         <label>Email</label><span>{{ user.email }}</span></li>
       <li>
         <label>API Key</label>
-        <span class="monospace">{{ apiKey }}</span>
+        <span class="monospace" ng-show="!apiKey">Loading...</span>
+        <span class="monospace" ng-show="apiKey != ''">{{ apiKey }}</span>
+      </li>
+      <li>
+        <label>My Collections</label>
+        <ul>
+          <li>You don't have any collection yet</li>
+        </ul>
       </li>
     </ul>
 
     <section>
       <h3>Steps to get started</h3>
+
+      <h4>Saving a JSON object</h4>
       <pre>
         <code class="js">
-  // Use you API Key for all requests to the API
-  $http.post("https://openws.herokuapp.com/my_tasks?apiKey={{ apiKey }}", taskJSON)
-    .success(function() {
+  // JSON to be saved
+  var product = {
+    name: "Laptop",
+    price: 2000
+  };
+
+  // Saving in a collection called "my_products"
+  $.post("https://openws.herokuapp.com/my_products?apiKey=YOUR_API_KEY", product)
+    .done(function(data) {
+      console.log("Product saved successfully");
+      ...
+    });
+        </code>
+      </pre>
+
+      <h4>Retrieving an object</h4>
+      <pre>
+        <code class="js">
+  $.get("https://openws.herokuapp.com/my_products?apiKey=YOUR_API_KEY")
+    .done(function(data) {
+      console.log("Products retrieved.");
+      ...
+    });
+        </code>
+      </pre>
+
+      <h4>Updating an object</h4>
+      <p>Every object you save, receives an ID. This ID is saved in an attribute called "_id".</p>
+      <p>To update an object you need to pass in its ID in the URL, as shown below:</p>
+      <pre>
+        <code class="js">
+  var product = {
+    name: "Apple Laptop",
+    value: 2000
+  };
+
+  // In this example, the ID is 547ba6d00b07515f0d4b6c62
+  $.put("https://openws.herokuapp.com/my_products/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY", product)
+    .done(function(data) {
+      console.log("Product updated");
+      ...
+    });
+        </code>
+      </pre>
+
+      <h4>Deleting an object</h4>
+      <p>To update an object you need to pass in its ID in the URL, as shown below:</p>
+      <pre>
+        <code class="js">
+  // In this example, the ID is 547ba6d00b07515f0d4b6c62
+  $.delete("https://openws.herokuapp.com/my_products/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY")
+    .done(function(data) {
+      console.log("Product deleted successfully");
       ...
     });
         </code>
