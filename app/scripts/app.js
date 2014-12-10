@@ -67,7 +67,9 @@ angular
           };
 
       $http.post(userUrl, userJson).success(function(data) {
+        $rootScope.userJson = data;
         $rootScope.apiKey = data.api_key;
+        $rootScope.$emit('apiKeyLoaded', data.api_key);
       });
     });
   });

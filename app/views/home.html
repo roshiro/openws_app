@@ -1,30 +1,39 @@
-<div class="home" ng-controller="HomeCtrl as htmlCtrl">
-  <div class="user_data">
-    <p class="welcome">Welcome {{ user.first_name }}!</p>
-    <ul class="simple_list">
-      <li>
-        <label>Email</label><span>{{ user.email }}</span></li>
-      <li>
-        <label>API Key</label>
-        <span class="monospace" ng-show="!apiKey">Loading...</span>
-        <span class="monospace" ng-show="apiKey != ''">{{ apiKey }}</span>
-      </li>
-    </ul>
+<div class="home container-fluid" ng-controller="HomeCtrl as htmlCtrl">
+  <div class="user_data row">
+    <div class="col-md-2">
+      <img class="img-circle" src="http://www.gravatar.com/avatar/{{userJson.gravatar_hash}}" />
+    </div>
+    <div class="col-md-7">
+      <p class="welcome">Welcome {{ user.first_name }}!</p>
+      <ul class="simple_list">
+        <li>
+          <label>Email</label><span>{{ user.email }}</span></li>
+        <li>
+          <label>API Key</label>
+          <span class="monospace" ng-show="!apiKey">Loading...</span>
+          <span class="monospace" ng-show="apiKey != ''">{{ apiKey }}</span>
+        </li>
+      </ul>
+      <div class="user_collections">
+        <label><span class="icon icon-collection"></span> My Collections</label>
+        <span ng-show="htmlCtrl.collections == null">Loading...</span>
+        <span ng-show="!htmlCtrl.collections.length"><br>
+          You have no collections yet. You can create one by saving any JSON object to a desired collection name.
+          If it doesn't exist, it will be created automatically.
+        </span>
+        <ul>
+          <li ng-repeat="collection in htmlCtrl.collections">{{collection}}</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="user_collections">
-    <label>My Collections</label>
-    <span ng-show="htmlCtrl.collections == null">Loading...</span>
-    <span ng-show="htmlCtrl.collections == []">You have no collections</span>
-    <ul>
-      <li ng-repeat="collection in htmlCtrl.collections">{{collection}}</li>
-    </ul>
-  </div>
-    <section>
-      <h3>Steps to get started</h3>
 
-      <h4>Saving a JSON object</h4>
-      <pre>
-        <code class="js">
+  <section class="get-started">
+    <h3>Steps to get started</h3>
+
+    <h4>Saving a JSON object</h4>
+    <pre>
+      <code class="js">
   // JSON to be saved
   var product = {
     name: "Laptop",

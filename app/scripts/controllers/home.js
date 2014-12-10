@@ -11,9 +11,11 @@ angular.module('openwsAppApp')
 .controller('HomeCtrl', ['$http', '$rootScope', function ($http, $rootScope, $scope) {
   this.collections;
   var _this = this;
-  $http.get($rootScope.wsUrl + 'api/users/collections?apiKey=' + $rootScope.appApiKey)
-    .success(function(data) {
-      _this.collections = data;
-      console.log(_this.collections);
-    });
+
+  $rootScope.$on('apiKeyLoaded', function(event, apiKey) {
+    $http.get($rootScope.wsUrl + 'api/users/collections?apiKey=' + apiKey)
+      .success(function(data) {
+        _this.collections = data;
+      });
+  });
 }]);

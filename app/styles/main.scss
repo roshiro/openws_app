@@ -10,16 +10,36 @@
   url("entypo_social/entypo-social.svg#filename") format("svg");
 }
 
+@font-face {
+  font-family: "Entypo";
+  src: url("entypo/entypo.eot");
+  src: local("☺"),
+  url("entypo/entypo.woff") format("woff"),
+  url("entypo/entypo.otf") format("opentype"),
+  url("entypo/entypo.svg#filename") format("svg");
+}
+
 span.icon {
-  font-family: "Entypo Social";
+  font-family: "Entypo Social", "Entypo";
   font-style: normal;
   display: inline-block;
   margin-right: 5px;
+  font-size: 3em;
+  font-weight: 100;
+  line-height: 1px;
+  top: 6px;
+  position: relative;
 
-  &.icon-github::before { content: "\F300"}
-  &:before {
-    content: U+F300;
-  }
+  &.icon-google:before { content: "\F30F"}
+  &.icon-github:before { content: "\F300"}
+  &.icon-collection:before { content: "\E736"}
+  &.icon-user:before { content: "\1F464"}
+  &.icon-exit:before { content: "\E741"}
+  &.icon-thunder-cloud:before { content: "\26C8"}
+  &.icon-thumbs-up:before { content: "\1F44D"}
+  &.icon-rocket:before { content: "\1F680"}
+  &.icon-heart:before { content: "\2661"}
+  &.icon-chat:before { content: "\E720"}
 }
 
 .browsehappy {
@@ -179,6 +199,9 @@ body {
 .btn-github, .btn-google {
   font-size: 14px;
   font-weight: bold;
+  display: block;
+  width: 300px;
+  margin: 10px auto;
 }
 
 .btn-signup {
@@ -283,6 +306,17 @@ pre {
 .home {
   .user_data, .user_collections {
     margin-bottom: 50px;
+    clear: both;
+  }
+  .user_data {
+    img {
+      margin-right: 35px;
+      border: 3px solid lightblue;
+    }
+  }
+
+  .get-started {
+    clear: both;
   }
   ul.simple_list {
     list-style: none;
