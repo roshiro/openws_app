@@ -281,8 +281,12 @@ pre {
 }
 
 .home {
-  ul {
+  .user_data, .user_collections {
+    margin-bottom: 50px;
+  }
+  ul.simple_list {
     list-style: none;
+    padding-left: 0;
     li {
       height: 30px;
 

@@ -1,7 +1,7 @@
-<div class="home" ng-controller="HomeCtrl">
-  <div>
-    <ul>
-      <li class="welcome">Welcome {{ user.first_name }}!</li>
+<div class="home" ng-controller="HomeCtrl as htmlCtrl">
+  <div class="user_data">
+    <p class="welcome">Welcome {{ user.first_name }}!</p>
+    <ul class="simple_list">
       <li>
         <label>Email</label><span>{{ user.email }}</span></li>
       <li>
@@ -9,14 +9,16 @@
         <span class="monospace" ng-show="!apiKey">Loading...</span>
         <span class="monospace" ng-show="apiKey != ''">{{ apiKey }}</span>
       </li>
-      <li>
-        <label>My Collections</label>
-        <ul>
-          <li>You don't have any collection yet</li>
-        </ul>
-      </li>
     </ul>
-
+  </div>
+  <div class="user_collections">
+    <label>My Collections</label>
+    <span ng-show="htmlCtrl.collections == null">Loading...</span>
+    <span ng-show="htmlCtrl.collections == []">You have no collections</span>
+    <ul>
+      <li ng-repeat="collection in htmlCtrl.collections">{{collection}}</li>
+    </ul>
+  </div>
     <section>
       <h3>Steps to get started</h3>
 
@@ -82,5 +84,5 @@
       </pre>
     </section>
   </div>
-</div>
+
 <script>//hljs.initHighlightingOnLoad();</script>
