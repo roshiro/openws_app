@@ -1,6 +1,8 @@
 // bower:scss
 // endbower
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
+
 @font-face {
   font-family: "Entypo Social";
   src: url("entypo_social/entypo-social.eot");
@@ -40,6 +42,9 @@ span.icon {
   &.icon-rocket:before { content: "\1F680"}
   &.icon-heart:before { content: "\2661"}
   &.icon-chat:before { content: "\E720"}
+  &.icon-download:before { content: "\1F4E5"}
+  &.icon-attach:before { content: "\1F4CE"}
+  &.icon-bookmark:before { content: "\1F516"}
 }
 
 .browsehappy {
@@ -52,9 +57,14 @@ span.icon {
 /* Space out content a bit */
 body {
   padding-bottom: 20px;
-  // background: url('/images/background.jpeg') no-repeat;
-  // background-size: cover;
-  // color:white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-weight: 800;
+}
+h2, h3, h4 {
+  font-weight: 700;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -133,7 +143,7 @@ body {
       min-height: 500px;
 
       div.background {
-        padding: 35px 0;
+        padding: 35px 0 15px 0;
         width: 700px;
         margin: auto;
 
@@ -150,7 +160,7 @@ body {
     div#main_background {
 
       div.background {
-        padding: 35px 0;
+        padding: 35px 0 15px 0;
         width: 700px;
         margin: auto;
 
@@ -169,7 +179,7 @@ body {
       min-height: 300px;
 
       div.background {
-        padding: 35px 0;
+        padding: 35px 0 15px 0;
         width: 280px;
         margin: auto;
 
@@ -223,7 +233,6 @@ body {
     text-align: center;
 
     h1 {
-      font-weight: bold;
       letter-spacing: -2px;
       line-height: 46px;
     }
@@ -235,7 +244,7 @@ body {
       text-align: center;
       margin-top: 30px;
       font-weight: 300;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 30px;
       word-spacing: 1px;
     }
@@ -310,9 +319,14 @@ pre {
   }
   .user_data {
     img {
-      margin-right: 35px;
+      margin: 35px auto;
       border: 3px solid lightblue;
     }
+  }
+
+  .announcement {
+    color: lightslategray;
+    font-style: italic;
   }
 
   .get-started {
@@ -321,6 +335,7 @@ pre {
   ul.simple_list {
     list-style: none;
     padding-left: 0;
+    margin-bottom: 40px;
     li {
       height: 30px;
 
