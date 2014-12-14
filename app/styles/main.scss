@@ -1,7 +1,8 @@
 // bower:scss
 // endbower
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
+@import url(http://fonts.googleapis.com/css?family=Lato:400);
 
 @font-face {
   font-family: "Entypo Social";
@@ -57,7 +58,7 @@ span.icon {
 /* Space out content a bit */
 body {
   padding-bottom: 20px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -71,13 +72,37 @@ h2, h3, h4 {
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 20px 40px;
+}
+
+.wallpaper-inititalized {
+  .buttons .btn-default {
+    border-color: white;
+    border-width: 2px;
+    color: white;
+    background-color: transparent;
+
+    &:active, &:hover {
+      background: white;
+      color: #333;
+    }
+  }
+
+  .header {
+    position: absolute;
+  }
 }
 
 /* Custom page header */
 .header {
   position: relative;
+  width: 97%;
+  z-index: 1;
+
+  .logo {
+    float: left;
+    width: 135px;
+  }
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -88,12 +113,17 @@ h2, h3, h4 {
   }
 
   .buttons {
-    position: absolute;
-    top: 0;
-    right: 0;
-    button {
-      margin-left: 10px;
-    }
+    float: right;
+  }
+}
+
+.btn-default {
+  border-color: #333;
+
+  &:active, &:hover {
+    border-color: #333;
+    background: #333;
+    color: #FFF;
   }
 }
 
@@ -215,8 +245,13 @@ h2, h3, h4 {
 }
 
 .btn-signup {
-  background-color: #fa492b;
+  background-color: transparent;
   border-color: #fa492b;
+  -webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+
   &:hover, &:focus {
     background-color: #e14126;
     border-color: #e14126;
@@ -228,17 +263,36 @@ h2, h3, h4 {
 }
 
 .main {
+  #main_background {
+    height: 700px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 242px;
+    background-color: #444;
+    z-index: 0;
+
+    .wallpaper, .wallpaper-container {
+      z-index: -1;
+      -webkit-filter: blur(3px);
+      -moz-filter: blur(3px);
+      -o-filter: blur(3px);
+      -ms-filter: blur(3px);
+      filter: blur(3px);
+    }
+  }
   .title {
+    color: white;
     margin-bottom: 30px;
     text-align: center;
 
     h1 {
-      letter-spacing: -2px;
-      line-height: 46px;
+      font-weight: 400;
+      line-height: 64px;
+      font-size: 51px;
     }
 
     h3 {
-      color: #666;
+      color: white;
       max-width: 600px;
       margin: auto;
       text-align: center;
@@ -247,13 +301,14 @@ h2, h3, h4 {
       font-size: 18px;
       line-height: 30px;
       word-spacing: 1px;
+      letter-spacing: 1px;
     }
   }
 
   .btn-signup {
     margin: auto;
     display: block;
-    box-shadow: 0px 3px 0px darkred;
+    box-shadow: 0 1px 0 darkred;
     &:hover {
     }
     &:active {
@@ -264,12 +319,27 @@ h2, h3, h4 {
   section {
     margin-bottom: 80px;
 
+    .clear {
+      clear: both;
+    }
+
+    span.icon.large {
+      position: absolute;
+      font-size: 31em;
+      top: 110px;
+    }
+
     h2 {
       margin-bottom: 35px;
     }
 
     &.what-is {
       margin-top: 100px;
+      color: blueviolet;
+    }
+
+    &.it-it-for-me {
+      color: darkorange;
     }
 
     &.how-it-works {
@@ -394,20 +464,7 @@ body button:focus {
   outline-style: none;
 }
 
-.btn-default {
-  border-color: #333;
-
-  &:active, &:hover {
-    border-color: #333;
-    background: #333;
-    color: #FFF;
-  }
-}
-
 #mc_embed_signup {
-  font-family: inherit;
-  width: 500px;
-
   label {
     font-size: 30px;
     font-weight: 500;

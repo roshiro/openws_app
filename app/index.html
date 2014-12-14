@@ -10,6 +10,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/Wallpaper/jquery.fs.wallpaper.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -24,14 +25,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <div class="container-fluid">
       <div class="header" ng-controller="MainCtrl as mainCtrl">
-        <h3 class="text-muted"><a ng-href="/"><img src="/images/logo.png"></a></h3>
+        <a ng-href="/"><img class="logo" src="/images/logo_white_header.png"></a>
         <div class="buttons">
-          <button type="button" ng-hide="user.authenticated" class="btn btn-default pull-right" ng-click="mainCtrl.goLogin()">
+          <button type="button" ng-hide="user.authenticated" class="btn btn-default" ng-click="mainCtrl.goLogin()">
             Login<i class="icon"></i>
           </button>
-          <button type="button" ng-show="user.authenticated" class="btn btn-default pull-right" ua-logout>
+          <button type="button" ng-show="user.authenticated" class="btn btn-default" ua-logout>
             <span class="icon icon-exit"></span> Logout
           </button>
         </div>
@@ -73,6 +74,7 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/Wallpaper/jquery.fs.wallpaper.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

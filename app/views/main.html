@@ -1,51 +1,66 @@
 <div class="main" ng-controller="MainCtrl as mainCtrl">
   <div id="main_background">
-    <div class="background"><img src="/images/background.png" /></div>
-    <div class="title">
-      <h1>The platform to store your JSON objects.<br>Works great with <span class="language"></span></h1>
-      <h3>OpenWS makes you <span>develop web applications faster</span>, no server-side knowledge required. Proudly built by developers for developers.</h3>
-    </div>
+    <div class="col-md-2"></div>
+    <div class="">
+      <div class="title">
+        <h1>The platform to store your JSON objects.<br>Works great with <span class="language"></span></h1>
+        <h3>OpenWS makes you <span>develop web applications faster</span>, no server-side knowledge required. Proudly built by developers for developers.</h3>
+      </div>
 
-    <button type="submit" class="btn btn-success btn-lg btn-signup" ng-click="mainCtrl.goSignup()">
-      Get started now - it's free!
-    </button>
+      <button type="submit" class="btn btn-success btn-lg btn-signup" ng-click="mainCtrl.goSignup()">
+        Get started now - it's free!
+      </button>
+    </div>
+    <div class="col-md-2"></div>
   </div>
 
-  <section class="what-is">
-    <h2><span class="icon icon-thunder-cloud"></span> What's OpenWS</h2>
-    <p>OpenWS makes <strong>web development faster</strong> by allowing webdevs to store their JSON objects into our platform.
-      It means you don't need to worry about creating the server-side mechanism to make the hard work of saving,
-      retrieving, searching, updating and deleting your data, we've done it for you.</p>
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <section class="what-is">
+      <h2>What's OpenWS</h2>
+      <div class="col-md-5"><span class="icon large visible-md visible-lg icon-thunder-cloud"></span></div>
+      <div class="col-md-7">
+        <p>OpenWS makes <strong>web development faster</strong> by allowing webdevs to store their JSON objects into our platform.
+          It means you don't need to worry about creating the server-side mechanism to make the hard work of saving,
+          retrieving, searching, updating and deleting your data, we've done it for you.</p>
 
-    <p>Our API supports POST, PUT, GET and DELETE. It means you will be allowed to save your data,
-      update it, retrieve it and delete it using the best practices.</p>
-  </section>
+          <p>Our API supports POST, PUT, GET and DELETE. It means you will be allowed to save your data,
+            update it, retrieve it and delete it using the best practices.</p>
+      </div>
+      <div class="clear"></div>
+    </section>
 
-  <section class="it-it-for-me">
-    <h2><span class="icon icon-thumbs-up"></span> Is OpenWS for me?</h2>
-    <p>
-      OpenWS is a great fit for your project if:
-      <ul>
-        <li>You're a web developer;</li>
-        <li>Your project needs to store data;</li>
-        <li>You have no knowledge of server-side development (if you do, that's fine);</li>
-        <li>You want to prototype and develop your front-end quickly;</li>
-      </ul>
-    </p>
-  </section>
+    <section class="it-it-for-me">
+      <h2>Is OpenWS for me?</h2>
+      <div class="col-md-7">
+        <p>
+          OpenWS is a great fit for your project if:
+          <ul>
+            <li>You're a web developer;</li>
+            <li>Your project needs to store data;</li>
+            <li>You have no knowledge of server-side development (if you do, that's fine);</li>
+            <li>You want to prototype and develop your front-end quickly;</li>
+          </ul>
+        </p>
+      </div>
+      <div class="col-md-5">
+        <span class="icon visible-md visible-lg large icon-thumbs-up"></span>
+      </div>
+      <div class="clear"></div>
+    </section>
 
-  <section class="how-it-works">
-    <h2><span class="icon icon-rocket"></span> How to start in 6 minutes</h2>
-    <p>Follow the steps to use the API with AngularJS.</p>
-    <ol>
-    <li>
-      <strong>Create an account for free</strong>
-      <p>You will receive an API KEY which will be used in the next step.</p>
-    </li>
-    <li>
-      <strong>Saving a JSON object</strong>
-      <pre>
-        <code class="js">
+    <section class="how-it-works">
+      <h2>How to start in 6 minutes</h2>
+      <p>Follow the steps to use the API with AngularJS.</p>
+      <ol>
+        <li>
+          <strong>Create an account for free</strong>
+          <p>You will receive an API KEY which will be used in the next step.</p>
+        </li>
+        <li>
+          <strong>Saving a JSON object</strong>
+          <pre>
+            <code class="js">
   ...
   var = taskJSON = {
     name: "My first task",
@@ -57,60 +72,60 @@
     $log.debug("Task saved successfuly");
   });
   ...
-        </code>
-      </pre>
-    </li>
-    <li>
-      <strong>Retrieving all JSON objects</strong>
-      <pre>
-        <code class="js">
+              </code>
+            </pre>
+          </li>
+          <li>
+            <strong>Retrieving all JSON objects</strong>
+            <pre>
+              <code class="js">
   ...
   $http.get("https://openws.herokuapp.com/my_tasks?apiKey=YOUR_API_KEY")
-   .success(function() {
-     $log.debug("Task saved successfuly");
-   });
+  .success(function() {
+    $log.debug("Task saved successfuly");
+  });
   ...
-        </code>
-      </pre>
-    </li>
-  </ol>
-  </section>
+            </code>
+          </pre>
+        </li>
+      </ol>
+    </section>
+    <div class="clear"></div>
+    <section class="works-great">
+      <h2><span class="icon icon-heart"></span> Works great with...</h2>
+      <div class="platforms"><img src="/images/platforms.png"></div>
+      <div class="clear"></div>
+    </section>
 
-  <section class="works-great">
-    <h2><span class="icon icon-heart"></span> Works great with...</h2>
-    <div class="platforms"><img src="/images/platforms.png"></div>
-  </section>
+    <section>
+      <h2><span class="icon icon-chat"></span> More about us</h2>
+      <p>OpenWS is new, it means there are a lot of <strong>improvements</strong> happening right now.
+        If you have suggestions to improve this service or want to help spread the word, please do
+        contact me directly via twitter <a href="http://twitter.com/roshiro" target="_blank">@roshiro</a>.</p>
+      <div class="clear"></div>
+    </section>
 
-  <section>
-    <h2><span class="icon icon-chat"></span> More about us</h2>
-    <p>OpenWS is new, it means there are a lot of <strong>improvements</strong> happening right now.
-      If you have suggestions to improve this service or want to help spread the word, please do
-      contact me directly via twitter <a href="http://twitter.com/roshiro" target="_blank">@roshiro</a>.</p>
-  </section>
+    <section>
+      <p>
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="//twitter.us6.list-manage.com/subscribe/post?u=a9a675627044c215a33b477ab&amp;id=c935222b12" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <h2 for="mce-EMAIL">Be the first to get News and Updates</h2>
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_a9a675627044c215a33b477ab_c935222b12" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+          </form>
+        </div>
 
-  <section>
-    <p>
-      <!-- Begin MailChimp Signup Form -->
-      <style type="text/css">
-      #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-      /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-      </style>
-      <div id="mc_embed_signup">
-        <form action="//twitter.us6.list-manage.com/subscribe/post?u=a9a675627044c215a33b477ab&amp;id=c935222b12" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-            <label for="mce-EMAIL">Be the first to get News and Updates</label>
-            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;"><input type="text" name="b_a9a675627044c215a33b477ab_c935222b12" tabindex="-1" value=""></div>
-            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-          </div>
-        </form>
-      </div>
+        <!--End mc_embed_signup-->
+      </p>
+    </section>
 
-      <!--End mc_embed_signup-->
-    </p>
-  </section>
+  </div>
+  <div class="col-md-2"></div>
 </div>
 <script>
   $(".language").typed({
@@ -120,5 +135,8 @@
     backDelay: 1200,
     startDelay: 1200,
     loop: true
+  });
+  $("#main_background").wallpaper({
+    source: "/images/mac_glasses.jpeg"
   });
 </script>
