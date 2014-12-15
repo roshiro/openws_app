@@ -75,7 +75,25 @@ h2, h3, h4 {
   padding: 20px 40px;
 }
 
+.footer {
+
+}
+
+img.logo.default { display: block; }
+img.logo.main { display: none; }
+
+.content-wrapper {
+  padding: 0 45px;
+}
+
 .wallpaper-inititalized {
+  img.logo.default { display: none; }
+  img.logo.main { display: block; }
+
+  .content-wrapper {
+    padding: 0;
+  }
+
   .buttons .btn-default {
     border-color: white;
     border-width: 2px;
@@ -98,6 +116,11 @@ h2, h3, h4 {
   position: relative;
   width: 97%;
   z-index: 1;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 
   .logo {
     float: left;
@@ -125,6 +148,10 @@ h2, h3, h4 {
     background: #333;
     color: #FFF;
   }
+}
+
+.clear {
+  clear: both;
 }
 
 /* Custom page footer */
@@ -317,16 +344,16 @@ h2, h3, h4 {
   }
 
   section {
+    position: relative;
     margin-bottom: 80px;
 
-    .clear {
-      clear: both;
-    }
-
     span.icon.large {
+      font-size: 107em;
+      top: 200px;
+      opacity: 0.05;
       position: absolute;
-      font-size: 31em;
-      top: 110px;
+      color: red;
+      z-index: -1;
     }
 
     h2 {
@@ -335,11 +362,9 @@ h2, h3, h4 {
 
     &.what-is {
       margin-top: 100px;
-      color: blueviolet;
     }
 
     &.it-it-for-me {
-      color: darkorange;
     }
 
     &.how-it-works {

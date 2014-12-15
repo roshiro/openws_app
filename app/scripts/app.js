@@ -59,6 +59,12 @@ angular
       $location.path('/home');
     }
 
+    $rootScope.$on('$routeChangeStart', function(next, current) {
+      if($location.$$path != "" && $location.$$path != "#/") {
+        $('body').removeClass("wallpaper-inititalized");
+      }
+    });
+
     $rootScope.$on('user.login', function() {
       var userUrl = $rootScope.wsUrl + 'api/users/new?apiKey=' + $rootScope.appApiKey,
           userJson = {

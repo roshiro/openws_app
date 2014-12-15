@@ -27,19 +27,22 @@
     <!-- Add your site or application content here -->
     <div class="container-fluid">
       <div class="header" ng-controller="MainCtrl as mainCtrl">
-        <a ng-href="/"><img class="logo" src="/images/logo_white_header.png"></a>
+        <a ng-href="/">
+          <img class="logo main" src="/images/logo_white_header.png">
+          <img class="logo default" src="/images/logo_red.png">
+        </a>
         <div class="buttons">
           <button type="button" ng-hide="user.authenticated" class="btn btn-default" ng-click="mainCtrl.goLogin()">
             Login<i class="icon"></i>
           </button>
-          <button type="button" ng-show="user.authenticated" class="btn btn-default" ua-logout>
+          <button type="button" ng-show="user.authenticated" class="btn btn-default btn-sm" ua-logout>
             <span class="icon icon-exit"></span> Logout
           </button>
         </div>
       </div>
 
-      <div ng-view=""></div>
-
+      <div class="content-wrapper" ng-view=""></div>
+      <div class="clear"></div>
       <div class="footer">
         <p></p>
       </div>

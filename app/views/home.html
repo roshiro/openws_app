@@ -17,15 +17,11 @@
       <div class="user_collections">
         <label><span class="icon icon-collection"></span> My Collections</label>
         <span ng-show="htmlCtrl.collections == null">Loading...</span>
-        <span ng-show="!htmlCtrl.collections.length"><br>
-          You have no collections yet. You can create one by saving any JSON object to a desired collection name.
-          If it doesn't exist, it will be created automatically.
-        </span>
         <table ng-show="htmlCtrl.collections.length" class="table">
           <tr ng-repeat="collection in htmlCtrl.collections">
             <td>{{collection}}</td>
             <td></td>
-            <td><a href="{{wsUrl}}{{collection}}?apiKey={{apiKey}}" target="blank"><span class="icon icon-download"></span> Export</a></td>
+            <td><a href="{{wsUrl}}{{collection}}?apiKey={{apiKey}}" target="blank"><span class="icon icon-download"></span> View collection</a></td>
           </tr>
         </table>
       </div>
