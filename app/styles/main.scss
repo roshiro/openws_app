@@ -2,7 +2,7 @@
 // endbower
 
 // @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
-@import url(http://fonts.googleapis.com/css?family=Lato:400);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
 
 @font-face {
   font-family: "Entypo Social";
@@ -46,6 +46,9 @@ span.icon {
   &.icon-download:before { content: "\1F4E5"}
   &.icon-attach:before { content: "\1F4CE"}
   &.icon-bookmark:before { content: "\1F516"}
+  &.icon-key:before { content: "\1F511"}
+  &.icon-globe:before { content: "\1F30E"}
+  &.icon-arrow-right:before { content: "\E75A"}
 }
 
 .browsehappy {
@@ -191,78 +194,6 @@ img.logo.main { display: none; }
   padding-top: 10px;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 1024px) {
-  .container {
-    max-width: 1010px;
-
-    div#main_background {
-      min-height: 500px;
-
-      div.background {
-        padding: 35px 0 15px 0;
-        width: 700px;
-        margin: auto;
-
-        img { width: 100%; }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-  .container {
-    width: 96%;
-
-    div#main_background {
-
-      div.background {
-        padding: 35px 0 15px 0;
-        width: 700px;
-        margin: auto;
-
-        img { width: 100%; }
-      }
-
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 730px;
-
-    div#main_background {
-      min-height: 300px;
-
-      div.background {
-        padding: 35px 0 15px 0;
-        width: 280px;
-        margin: auto;
-
-        img { width: 100%; }
-      }
-
-    }
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-
 .btn-github, .btn-google {
   font-size: 14px;
   font-weight: bold;
@@ -272,7 +203,7 @@ img.logo.main { display: none; }
 }
 
 .btn-signup {
-  background-color: transparent;
+  background-color: #fa492b;
   border-color: #fa492b;
   -webkit-transition: all 100ms ease-in-out;
   -moz-transition: all 100ms ease-in-out;
@@ -297,6 +228,10 @@ img.logo.main { display: none; }
     padding-top: 242px;
     background-color: #444;
     z-index: 0;
+
+    .btn-signup {
+      background-color: transparent;
+    }
 
     .wallpaper, .wallpaper-container {
       z-index: -1;
@@ -335,7 +270,6 @@ img.logo.main { display: none; }
   .btn-signup {
     margin: auto;
     display: block;
-    box-shadow: 0 1px 0 darkred;
     &:hover {
     }
     &:active {
@@ -345,7 +279,29 @@ img.logo.main { display: none; }
 
   section {
     position: relative;
-    margin-bottom: 80px;
+    margin-bottom: 180px;
+
+    .benefits {
+      text-align: center;
+      p { font-size: 1em; }
+      * { color: white; }
+      div {
+        padding: 23px;
+        min-height: 190px;
+        border: 3px solid;
+        border-radius: 8px;
+
+        &:nth-child(1) {
+          background-color: orange;
+        }
+        &:nth-child(2) {
+          background-color: yellowgreen;
+        }
+        &:nth-child(3) {
+          background-color: dodgerblue;
+        }
+      }
+    }
 
     span.icon.large {
       font-size: 107em;
@@ -357,7 +313,8 @@ img.logo.main { display: none; }
     }
 
     h2 {
-      margin-bottom: 35px;
+      margin-bottom: 50px;
+      text-align: center;
     }
 
     &.what-is {
@@ -368,8 +325,25 @@ img.logo.main { display: none; }
     }
 
     &.how-it-works {
+      ol {
+        list-style: none;
+        padding-left: 20px;
+      }
       li {
         margin-bottom: 20px;
+        text-indent: -1.4em;
+        padding-top: 10px;
+
+        &:before {
+          font-family: 'Entypo';
+          content: "\E75E";
+          float: left;
+          width: 0.6em;
+          top: -7px;
+          position: relative;
+          color: red;
+          font-size: 2em;
+        }
         strong {
           font-size: 1.3em;
         }
@@ -391,6 +365,7 @@ img.logo.main { display: none; }
       font-size: 1.3em;
       line-height: 1.7em;
       font-weight: 200;
+      color: #555;
     }
   }
 }
@@ -497,6 +472,7 @@ body button:focus {
 
   .button {
     background-color: #8fc857;
+    float: right;
     &:hover, &:focus, &:active {
       background-color: #5c9425;
     }
@@ -508,5 +484,86 @@ body button:focus {
 
   input.email {
     width: 100%;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1010px;
+
+    div#main_background {
+      min-height: 500px;
+
+      div.background {
+        padding: 35px 0 15px 0;
+        width: 700px;
+        margin: auto;
+
+        img { width: 100%; }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    width: 96%;
+
+    .main .title h1 {
+      font-size: 30px;
+    }
+
+    div#main_background {
+
+      div.background {
+        padding: 35px 0 15px 0;
+        width: 700px;
+        margin: auto;
+
+        img { width: 100%; }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main .title h1 {
+    font-size: 40px;
+    font-weight: 800;
+  }
+
+  .container {
+    max-width: 730px;
+
+    div#main_background {
+      min-height: 300px;
+
+      div.background {
+        padding: 35px 0 15px 0;
+        width: 280px;
+        margin: auto;
+
+        img { width: 100%; }
+      }
+
+    }
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
   }
 }

@@ -3,7 +3,8 @@
     <div class="col-md-2"></div>
     <div class="">
       <div class="title">
-        <h1>The platform to store your JSON objects.<br>Works great with <span class="language"></span></h1>
+        <h1 class="visible-xs">The platform to store your JSON objects.</h1>
+        <h1 class="hidden-xs">The platform to store your JSON objects.<br>Works great with <span class="language"></span></h1>
         <h3>OpenWS makes you <span>develop web applications faster</span>, no server-side knowledge required. Proudly built by developers for developers.</h3>
       </div>
 
@@ -14,48 +15,41 @@
     <div class="col-md-2"></div>
   </div>
 
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
     <section class="what-is">
       <h2>What's OpenWS?</h2>
-      <span class="icon large icon-thunder-cloud"></span>
-      <p>OpenWS makes <strong>web development faster</strong> by allowing webdevs to store their JSON objects into our platform.
-        It means you don't need to worry about creating the server-side mechanism to make the hard work of saving,
-        retrieving, searching, updating and deleting your data, we've done it for you.</p>
-
-        <p>Our API supports POST, PUT, GET and DELETE. It means you will be allowed to save your data,
-          update it, retrieve it and delete it using the best practices.</p>
-      <div class="clear"></div>
-    </section>
-
-    <section class="it-it-for-me">
-      <h2>Is OpenWS for me?</h2>
-      <div class="col-md-7">
-        <p>
-          OpenWS is a great fit for your project if:
-          <ul>
-            <li>You're a web developer;</li>
-            <li>Your project needs to store data;</li>
-            <li>You have no knowledge of server-side development (if you do, that's fine);</li>
-            <li>You want to prototype and develop your front-end quickly;</li>
-          </ul>
-        </p>
-      </div>
-      <div class="col-md-5">
+      <p>OpenWS is a brand new platform for web-developers to store JSON objects through our simple REST API. No server-side knowledge required.</p>
+      <div class="row benefits">
+        <div class="col-md-4">
+          <span class="icon icon-globe"></span>
+          <h4>IT'S FLEXIBLE</h4>
+          <p>Support for POST, PUT, GET and DELETE methods</p>
+        </div>
+        <div class="col-md-4">
+          <span class="icon icon-key"></span>
+          <h4>IT'S SAFE</h4>
+          <p>SSL 128-bit encryption</p>
+        </div>
+        <div class="col-md-4">
+          <span class="icon icon-thunder-cloud"></span>
+          <h4>IT'S EASY TO USE</h4>
+          <p>No downloads / No scripts / No SDK</p>
+        </div>
       </div>
       <div class="clear"></div>
     </section>
 
     <section class="how-it-works">
-      <h2>How to start in 6 minutes</h2>
+      <h2><span class="icon icon-rocket"></span> Get started in seconds</h2>
       <p>Follow the steps to use the API with AngularJS.</p>
       <ol>
         <li>
           <strong>Create an account for free</strong>
-          <p>You will receive an API KEY which will be used in the next step.</p>
+          <p>to get your API KEY</p>
         </li>
         <li>
-          <strong>Saving a JSON object</strong>
+          <strong>Save your first JSON object</strong>
           <pre>
             <code class="js">
   ...
@@ -73,7 +67,7 @@
             </pre>
           </li>
           <li>
-            <strong>Retrieving all JSON objects</strong>
+            <strong>Retrieving all your JSON objects</strong>
             <pre>
               <code class="js">
   ...
@@ -85,8 +79,14 @@
             </code>
           </pre>
         </li>
+        <li>
+          <strong>More...</strong>
+          <p>Signup to know more on updating, deleting and querying data</p>
+          <button type="submit" class="btn btn-success btn-lg btn-signup" ng-click="mainCtrl.goSignup()">
+            Get started now - it's free!
+          </button>
+        </li>
       </ol>
-      <span class="icon large icon-rocket"></span>
     </section>
     <div class="clear"></div>
     <section class="works-great">
@@ -104,12 +104,12 @@
     </section>
 
     <section>
+      <h2><span class="icon icon-arrow-right"></span> Be the first to get our Updates</h2>
       <p>
         <!-- Begin MailChimp Signup Form -->
         <div id="mc_embed_signup">
           <form action="//twitter.us6.list-manage.com/subscribe/post?u=a9a675627044c215a33b477ab&amp;id=c935222b12" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
-              <h2 for="mce-EMAIL">Be the first to get News and Updates</h2>
               <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               <div style="position: absolute; left: -5000px;"><input type="text" name="b_a9a675627044c215a33b477ab_c935222b12" tabindex="-1" value=""></div>
@@ -123,7 +123,7 @@
     </section>
 
   </div>
-  <div class="col-md-2"></div>
+  <div class="col-md-3"></div>
 </div>
 <script>
   $(".language").typed({
