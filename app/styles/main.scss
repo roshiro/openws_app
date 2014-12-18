@@ -231,6 +231,10 @@ img.logo.main { display: none; }
 
     .btn-signup {
       background-color: transparent;
+      &:hover, &:focus {
+        background-color: #e14126;
+        border-color: #e14126;
+      }
     }
 
     .wallpaper, .wallpaper-container {
@@ -270,8 +274,6 @@ img.logo.main { display: none; }
   .btn-signup {
     margin: auto;
     display: block;
-    &:hover {
-    }
     &:active {
       box-shadow: none;
     }
