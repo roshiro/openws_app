@@ -6,20 +6,20 @@
 
 @font-face {
   font-family: "Entypo Social";
-  src: url("entypo_social/entypo-social.eot");
+  src: url("../entypo_social/entypo-social.eot");
   src: local("☺"),
-  url("entypo_social/entypo-social.woff") format("woff"),
-  url("entypo_social/entypo-social.otf") format("opentype"),
-  url("entypo_social/entypo-social.svg#filename") format("svg");
+  url("../fonts/entypo-social.woff") format("woff"),
+  url("../fonts/entypo-social.otf") format("opentype"),
+  url("../fonts/entypo-social.svg#filename") format("svg");
 }
 
 @font-face {
   font-family: "Entypo";
-  src: url("entypo/entypo.eot");
+  src: url("../fonts/entypo.eot");
   src: local("☺"),
-  url("entypo/entypo.woff") format("woff"),
-  url("entypo/entypo.otf") format("opentype"),
-  url("entypo/entypo.svg#filename") format("svg");
+  url("../fonts/entypo.woff") format("woff"),
+  url("../fonts/entypo.otf") format("opentype"),
+  url("../fonts/entypo.svg#filename") format("svg");
 }
 
 span.icon {

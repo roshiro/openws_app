@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
-    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
   </head>
   <body ng-app="openwsAppApp">
     <!--[if lt IE 7]>
@@ -28,8 +27,8 @@
     <div class="container-fluid">
       <div class="header" ng-controller="MainCtrl as mainCtrl">
         <a ng-href="/">
-          <img class="logo main" src="/images/logo_white_header.png">
-          <img class="logo default" src="/images/logo_red.png">
+          <img class="logo main" src="images/logo_white_header.png">
+          <img class="logo default" src="images/logo_red.png">
         </a>
         <div class="buttons">
           <button type="button" ng-hide="user.authenticated" class="btn btn-default" ng-click="mainCtrl.goLogin()">
@@ -81,16 +80,16 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="https://app.userapp.io/js/userapp.client.js"></script>
+    <script src="https://app.userapp.io/js/angularjs.userapp.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="https://app.userapp.io/js/userapp.client.js"></script>
-        <script src="https://app.userapp.io/js/angularjs.userapp.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/signup.js"></script>
         <script src="scripts/controllers/home.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/typed.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
         <!-- endbuild -->
 </body>
 </html>
