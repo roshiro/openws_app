@@ -42,6 +42,7 @@ span.icon {
   &.icon-thumbs-up:before { content: "\1F44D"}
   &.icon-rocket:before { content: "\1F680"}
   &.icon-heart:before { content: "\2661"}
+  &.icon-heart-full:before { content: "\2665"}
   &.icon-chat:before { content: "\E720"}
   &.icon-download:before { content: "\1F4E5"}
   &.icon-attach:before { content: "\1F4CE"}
@@ -334,27 +335,17 @@ img.logo.main { display: none; }
     }
 
     &.how-it-works {
-      ol {
-        list-style: none;
-        padding-left: 20px;
-      }
-      li {
-        margin-bottom: 20px;
-        text-indent: -1.4em;
-        padding-top: 10px;
+      div.step h4 {
 
         &:before {
           font-family: 'Entypo';
           content: "\E75E";
           float: left;
           width: 0.6em;
-          top: -7px;
+          top: -10px;
           position: relative;
           color: red;
           font-size: 2em;
-        }
-        strong {
-          font-size: 1.3em;
         }
       }
     }
@@ -386,9 +377,9 @@ pre {
   margin: 0;
   border: none;
 
-  background: #f3f5f7;
-  padding: 0 25px;
-  margin: 15px 0;
+  background: none;
+  padding: 0;
+  margin: 0;
 }
 
 .home {

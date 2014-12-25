@@ -12,6 +12,9 @@ angular.module('openwsAppApp')
   this.collections;
   var _this = this;
 
+  // Init code highlight
+  hljs.initHighlighting();
+
   $rootScope.$on('apiKeyLoaded', function(event, apiKey) {
     $http.get($rootScope.wsUrl + 'api/users/collections?apiKey=' + apiKey)
       .success(function(data) {
