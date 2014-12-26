@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <section class="get-started">
+  <section class="get-started step">
     <h3>Steps to get started</h3>
 
     <h4>Saving a JSON object</h4>
@@ -47,22 +47,36 @@
     price: 2000
   };
 
-  // Saving in a collection called "my_products"
-  $.post("https://openws.herokuapp.com/my_products?apiKey=YOUR_API_KEY", product)
+  // Saving in a collection called "my_test_collection"
+  $.post("https://openws.herokuapp.com/my_test_collection?apiKey=YOUR_API_KEY", product)
     .done(function(data) {
       console.log("Product saved successfully");
-      ...
+      console.log(data._id);   // 547ba6d00b07515f0d4b6c62
+      console.log(data.name);  // Laptop
+      console.log(data.price); // 2000
     });
         </code>
       </pre>
 
-      <h4>Retrieving an object</h4>
+      <h4>Retrieving all the objects from a collection</h4>
       <pre>
         <code class="js">
-  $.get("https://openws.herokuapp.com/my_products?apiKey=YOUR_API_KEY")
+  $.get("https://openws.herokuapp.com/my_test_collection?apiKey=YOUR_API_KEY")
     .done(function(data) {
       console.log("Products retrieved.");
-      ...
+      console.log(data[0].name); // Laptop
+    });
+        </code>
+      </pre>
+
+      <h4>Queries</h4>
+      <p>You can also filter the results by passing in <code>q</code> to the URL.</p>
+      <pre>
+        <code class="js">
+  // The code below will query just the documents where name attribute is "Laptop"
+  $.get("https://openws.herokuapp.com/my_test_collection?q={"name":"Laptop"}&apiKey=YOUR_API_KEY")
+    .done(function(data) {
+      console.log(data[0].name); // Laptop
     });
         </code>
       </pre>
@@ -78,10 +92,10 @@
   };
 
   // In this example, the ID is 547ba6d00b07515f0d4b6c62
-  $.put("https://openws.herokuapp.com/my_products/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY", product)
+  $.put("https://openws.herokuapp.com/my_test_collection/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY", product)
     .done(function(data) {
       console.log("Product updated");
-      ...
+      console.log(data.name); // Apple Laptop
     });
         </code>
       </pre>
@@ -91,13 +105,39 @@
       <pre>
         <code class="js">
   // In this example, the ID is 547ba6d00b07515f0d4b6c62
-  $.delete("https://openws.herokuapp.com/my_products/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY")
-    .done(function(data) {
+  $.delete("https://openws.herokuapp.com/my_test_collection/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY")
+    .done(function() {
       console.log("Product deleted successfully");
+    });
+        </code>
+      </pre>
+
+      <h4>Creating a new collection</h4>
+      <p>To create a new collection you just need to save any object to a collection you want.</p>
+
+      <pre>
+        <code class="js">
+  var employee = {
+    name: "James H.",
+    salary: 3400,
+    permissions: [
+      {
+        name: "Admin"
+      },
+      {
+        name: "Service"
+      }
+    ]
+  };
+
+  // The collection "employees" will be created if it doesn't exist yet.
+  $.post("https://openws.herokuapp.com/employees?apiKey=YOUR_API_KEY", employee)
+    .done(function(data) {
       ...
     });
         </code>
       </pre>
+
     </section>
   </div>
 

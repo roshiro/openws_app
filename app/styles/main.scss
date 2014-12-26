@@ -221,6 +221,17 @@ img.logo.main { display: none; }
   }
 }
 
+.step_arrow {
+  font-family: 'Entypo';
+  content: "\E75E";
+  float: left;
+  width: 0.6em;
+  top: -10px;
+  position: relative;
+  color: red;
+  font-size: 2em;
+}
+
 .main {
   #main_background {
     height: 700px;
@@ -338,14 +349,7 @@ img.logo.main { display: none; }
       div.step h4 {
 
         &:before {
-          font-family: 'Entypo';
-          content: "\E75E";
-          float: left;
-          width: 0.6em;
-          top: -10px;
-          position: relative;
-          color: red;
-          font-size: 2em;
+          @extend .step_arrow;
         }
       }
     }
@@ -401,6 +405,13 @@ pre {
 
   .get-started {
     clear: both;
+    h3 { padding-bottom: 20px; }
+
+    &.step h4 {
+      &:before {
+        @extend .step_arrow;
+      }
+    }
   }
   ul.simple_list {
     list-style: none;
