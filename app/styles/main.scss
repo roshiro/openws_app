@@ -50,6 +50,9 @@ span.icon {
   &.icon-key:before { content: "\1F511"}
   &.icon-globe:before { content: "\1F30E"}
   &.icon-arrow-right:before { content: "\E75A"}
+  &.icon-ticket:before { content: "\1F3AB"}
+  &.icon-info:before { content: "\2139"}
+  &.icon-paper-plane:before { content: "\1F53F"}
 }
 
 .browsehappy {
@@ -434,9 +437,26 @@ pre {
   font-family: monospace;
 }
 
-.signup-page {
+.signup-page, .login-page {
   text-align: center;
 
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p.info {
+    color: #555;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+  }
+
+  div.note {
+    color: #999;
+    margin-top: 70px;
+    font-style: italic;
+  }
+}
+.login-page {
   h2 {
     margin-bottom: 40px;
   }
