@@ -27,11 +27,12 @@
       </div>
     </div>
     <div class="col-md-3 announcement">
-      <p><span class="icon icon-bookmark"></span> Openws is in early beta and we're working hard to provide the best service for you.</p>
+      <p><span class="icon icon-bookmark"></span> Openws is in early beta(*) and we're working hard to provide the best service for you.</p>
       <p>At the moment we're limiting to 20Mb of space across all your collections.</p>
       <p>It would be great to hear your opinion and suggestions either through email
         <a href="mailto:rafael.oshiro@gmail.com">rafael.oshiro@gmail.com</a> or twitter <a target="_blank" href="http://twitter.com/roshiro">@roshiro</a>
       </p>
+      <p>(*) Not yet recommended to use in production environment.</p>
     </div>
   </div>
 
@@ -51,9 +52,9 @@
   $.post("https://openws.herokuapp.com/my_test_collection?apiKey=YOUR_API_KEY", product)
     .done(function(data) {
       console.log("Product saved successfully");
-      console.log(data._id);   // 547ba6d00b07515f0d4b6c62
-      console.log(data.name);  // Laptop
-      console.log(data.price); // 2000
+      console.log(data[0]._id);   // 547ba6d00b07515f0d4b6c62
+      console.log(data[0].name);  // Laptop
+      console.log(data[0].price); // 2000
     });
         </code>
       </pre>
@@ -64,18 +65,6 @@
   $.get("https://openws.herokuapp.com/my_test_collection?apiKey=YOUR_API_KEY")
     .done(function(data) {
       console.log("Products retrieved.");
-      console.log(data[0].name); // Laptop
-    });
-        </code>
-      </pre>
-
-      <h4>Queries</h4>
-      <p>You can also filter the results by passing in <code>q</code> to the URL.</p>
-      <pre>
-        <code class="js">
-  // The code below will query just the documents where name attribute is "Laptop"
-  $.get("https://openws.herokuapp.com/my_test_collection?q={"name":"Laptop"}&apiKey=YOUR_API_KEY")
-    .done(function(data) {
       console.log(data[0].name); // Laptop
     });
         </code>
@@ -101,7 +90,7 @@
       </pre>
 
       <h4>Deleting an object</h4>
-      <p>To update an object you need to pass in its ID in the URL, as shown below:</p>
+      <p>To delete an object you need to pass in its ID in the URL, as shown below:</p>
       <pre>
         <code class="js">
   // In this example, the ID is 547ba6d00b07515f0d4b6c62
@@ -111,9 +100,13 @@
     });
         </code>
       </pre>
+    </section>
+
+    <section class="get-started step">
+      <h3>Additional info</h3>
 
       <h4>Creating a new collection</h4>
-      <p>To create a new collection you just need to save any object to a collection you want.</p>
+      <p>Creating a new collection is exactly the same step as the one above, the difference is that you just need to save your JSON object any object to a collection you want.</p>
 
       <pre>
         <code class="js">
@@ -121,20 +114,32 @@
     name: "James H.",
     salary: 3400,
     permissions: [
-      {
-        name: "Admin"
-      },
-      {
-        name: "Service"
-      }
+    {
+      name: "Admin"
+    },
+    {
+      name: "Service"
+    }
     ]
   };
 
   // The collection "employees" will be created if it doesn't exist yet.
   $.post("https://openws.herokuapp.com/employees?apiKey=YOUR_API_KEY", employee)
-    .done(function(data) {
-      ...
-    });
+  .done(function(data) {
+    ...
+  });
+        </code>
+      </pre>
+
+      <h4>Queries</h4>
+      <p>You can also filter the results by passing in <code>q</code> to the URL.</p>
+      <pre>
+        <code class="js">
+  // The code below will query just the documents where name attribute is "Laptop"
+  $.get("https://openws.herokuapp.com/my_test_collection?q={"name":"Laptop"}&apiKey=YOUR_API_KEY")
+  .done(function(data) {
+    console.log(data[0].name); // Laptop
+  });
         </code>
       </pre>
 

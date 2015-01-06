@@ -1,4 +1,4 @@
-<div class="home" ng-controller="HomeCtrl as htmlCtrl"> <div class="user_data row"> <div class="col-md-2"> <img class="img-circle" src="https://www.gravatar.com/avatar/{{userJson.gravatar_hash}}"> </div> <div class="col-md-7"> <p class="welcome">Welcome {{ user.first_name }}!</p> <ul class="simple_list"> <li> <label>Email</label><span>{{ user.email }}</span></li> <li> <label>API Key</label> <span class="monospace" ng-show="!apiKey">Loading...</span> <span class="monospace" ng-show="apiKey != ''">{{ apiKey }}</span> </li> </ul> <div class="user_collections"> <label><span class="icon icon-collection"></span> My Collections</label> <span ng-show="htmlCtrl.collections == null">Loading...</span> <table ng-show="htmlCtrl.collections.length" class="table"> <tr ng-repeat="collection in htmlCtrl.collections"> <td>{{collection}} <td> <td><a href="{{wsUrl}}{{collection}}?apiKey={{apiKey}}" target="blank"><span class="icon icon-download"></span> View collection</a>  </table> </div> </div> <div class="col-md-3 announcement"> <p><span class="icon icon-bookmark"></span> Openws is in early beta and we're working hard to provide the best service for you.</p> <p>At the moment we're limiting to 20Mb of space across all your collections.</p> <p>It would be great to hear your opinion and suggestions either through email <a href="mailto:rafael.oshiro@gmail.com">rafael.oshiro@gmail.com</a> or twitter <a target="_blank" href="http://twitter.com/roshiro">@roshiro</a> </p> </div> </div> <section class="get-started step"> <h3>Steps to get started</h3> <h4>Saving a JSON object</h4> <pre>
+<div class="home" ng-controller="HomeCtrl as htmlCtrl"> <div class="user_data row"> <div class="col-md-2"> <img class="img-circle" src="https://www.gravatar.com/avatar/{{userJson.gravatar_hash}}"> </div> <div class="col-md-7"> <p class="welcome">Welcome {{ user.first_name }}!</p> <ul class="simple_list"> <li> <label>Email</label><span>{{ user.email }}</span></li> <li> <label>API Key</label> <span class="monospace" ng-show="!apiKey">Loading...</span> <span class="monospace" ng-show="apiKey != ''">{{ apiKey }}</span> </li> </ul> <div class="user_collections"> <label><span class="icon icon-collection"></span> My Collections</label> <span ng-show="htmlCtrl.collections == null">Loading...</span> <table ng-show="htmlCtrl.collections.length" class="table"> <tr ng-repeat="collection in htmlCtrl.collections"> <td>{{collection}} <td> <td><a href="{{wsUrl}}{{collection}}?apiKey={{apiKey}}" target="blank"><span class="icon icon-download"></span> View collection</a>  </table> </div> </div> <div class="col-md-3 announcement"> <p><span class="icon icon-bookmark"></span> Openws is in early beta(*) and we're working hard to provide the best service for you.</p> <p>At the moment we're limiting to 20Mb of space across all your collections.</p> <p>It would be great to hear your opinion and suggestions either through email <a href="mailto:rafael.oshiro@gmail.com">rafael.oshiro@gmail.com</a> or twitter <a target="_blank" href="http://twitter.com/roshiro">@roshiro</a> </p> <p>(*) Not yet recommended to use in production environment.</p> </div> </div> <section class="get-started step"> <h3>Steps to get started</h3> <h4>Saving a JSON object</h4> <pre>
       <code class="js">
   // JSON to be saved
   var product = {
@@ -10,9 +10,9 @@
   $.post("https://openws.herokuapp.com/my_test_collection?apiKey=YOUR_API_KEY", product)
     .done(function(data) {
       console.log("Product saved successfully");
-      console.log(data._id);   // 547ba6d00b07515f0d4b6c62
-      console.log(data.name);  // Laptop
-      console.log(data.price); // 2000
+      console.log(data[0]._id);   // 547ba6d00b07515f0d4b6c62
+      console.log(data[0].name);  // Laptop
+      console.log(data[0].price); // 2000
     });
         </code>
       </pre> <h4>Retrieving all the objects from a collection</h4> <pre>
@@ -20,14 +20,6 @@
   $.get("https://openws.herokuapp.com/my_test_collection?apiKey=YOUR_API_KEY")
     .done(function(data) {
       console.log("Products retrieved.");
-      console.log(data[0].name); // Laptop
-    });
-        </code>
-      </pre> <h4>Queries</h4> <p>You can also filter the results by passing in <code>q</code> to the URL.</p> <pre>
-        <code class="js">
-  // The code below will query just the documents where name attribute is "Laptop"
-  $.get("https://openws.herokuapp.com/my_test_collection?q={"name":"Laptop"}&apiKey=YOUR_API_KEY")
-    .done(function(data) {
       console.log(data[0].name); // Laptop
     });
         </code>
@@ -45,7 +37,7 @@
       console.log(data.name); // Apple Laptop
     });
         </code>
-      </pre> <h4>Deleting an object</h4> <p>To update an object you need to pass in its ID in the URL, as shown below:</p> <pre>
+      </pre> <h4>Deleting an object</h4> <p>To delete an object you need to pass in its ID in the URL, as shown below:</p> <pre>
         <code class="js">
   // In this example, the ID is 547ba6d00b07515f0d4b6c62
   $.delete("https://openws.herokuapp.com/my_test_collection/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY")
@@ -53,26 +45,34 @@
       console.log("Product deleted successfully");
     });
         </code>
-      </pre> <h4>Creating a new collection</h4> <p>To create a new collection you just need to save any object to a collection you want.</p> <pre>
+      </pre> </section> <section class="get-started step"> <h3>Additional info</h3> <h4>Creating a new collection</h4> <p>Creating a new collection is exactly the same step as the one above, the difference is that you just need to save your JSON object any object to a collection you want.</p> <pre>
         <code class="js">
   var employee = {
     name: "James H.",
     salary: 3400,
     permissions: [
-      {
-        name: "Admin"
-      },
-      {
-        name: "Service"
-      }
+    {
+      name: "Admin"
+    },
+    {
+      name: "Service"
+    }
     ]
   };
 
   // The collection "employees" will be created if it doesn't exist yet.
   $.post("https://openws.herokuapp.com/employees?apiKey=YOUR_API_KEY", employee)
-    .done(function(data) {
-      ...
-    });
+  .done(function(data) {
+    ...
+  });
+        </code>
+      </pre> <h4>Queries</h4> <p>You can also filter the results by passing in <code>q</code> to the URL.</p> <pre>
+        <code class="js">
+  // The code below will query just the documents where name attribute is "Laptop"
+  $.get("https://openws.herokuapp.com/my_test_collection?q={"name":"Laptop"}&apiKey=YOUR_API_KEY")
+  .done(function(data) {
+    console.log(data[0].name); // Laptop
+  });
         </code>
       </pre> </section> </div> <script>$(function() {
   hljs.initHighlighting();
