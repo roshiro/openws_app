@@ -81,7 +81,11 @@
   };
 
   // In this example, the ID is 547ba6d00b07515f0d4b6c62
-  $.put("https://openws.herokuapp.com/my_test_collection/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY", product)
+  $.ajax({
+      url: "https://openws.herokuapp.com/my_test_collection/547ba6d00b07515f0d4b6c62?apiKey=YOUR_API_KEY",
+      type: "PUT",
+      data: product
+    })
     .done(function(data) {
       console.log("Product updated");
       console.log(data.name); // Apple Laptop
@@ -136,7 +140,9 @@
       <pre>
         <code class="js">
   // The code below will query just the documents where name attribute is "Laptop"
-  $.get("https://openws.herokuapp.com/my_test_collection?q={"name":"Laptop"}&apiKey=YOUR_API_KEY")
+  var query = JSON.stringify({name:"Laptop"});
+
+  $.get("https://openws.herokuapp.com/my_test_collection?q="+query+"&apiKey=YOUR_API_KEY")
   .done(function(data) {
     console.log(data[0].name); // Laptop
   });
